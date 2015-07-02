@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"
+	default-lazy-init="true">
+  <!--   scope="prototype" "singleton"--> 
+    <bean id="ran" class="com.train.springinterface.Random"  scope="prototype"/>
+   
+    <bean id="hello" class="com.train.springinterface.HelloAbstract">
+        <lookup-method name="createRandom" bean="ran"/>
+        <property name="random">
+            <ref local="ran"/>
+        </property>
+    </bean>
+   
+</beans> 
