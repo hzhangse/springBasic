@@ -23,9 +23,9 @@ public class SpringBeansLoad {
 	//ctxt.setAllowBeanDefinitionOverriding(false);
 //	ctxt.refresh();
 		//AbstractFactoryBean以及BeanFactoryUtils测试
-		ClassPathXmlApplicationContext ctxt = new ClassPathXmlApplicationContext(new String[]{"bean.xml", "bean1.xml", "bean2.xml"});
-		TestBean bean = (TestBean) ctxt.getBean("test");
-		System.out.println(bean.getProperty().getName());
+		ClassPathXmlApplicationContext ctxt = new ClassPathXmlApplicationContext(new String[]{"bean2.xml"});
+	//	TestBean bean = (TestBean) ctxt.getBean("test");
+	//	System.out.println(bean.getProperty().getName());
 		ctxt.close();
 	}
 
